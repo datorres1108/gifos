@@ -1,0 +1,63 @@
+.header
+{
+   // border: solid red 2px; 
+    grid-area:header;
+    .nav
+    {
+    	display: flex;
+    	justify-content: space-between; 
+    	max-width: 992px;
+    	margin: 0 auto;	
+
+    	.logo
+    	{						
+    		//background: #5ED7C6;
+    		padding: 0 40px;
+    		line-height: 90px;
+    		text-decoration: none; 
+    		.logo-img{
+    			padding: 5px 5px;
+    		}
+    	}
+
+    	.nav-menu
+    	{
+    		display: flex;
+    		margin-right: 40px;
+    		line-height: 90px;
+    		list-style: none;
+    		
+    		.nav-menu-item
+    		{
+    			font-family: Montserrat-Bold;
+    			font-weight: bold;
+				font-size: 13px;
+				color: #572EE5;
+    			margin: 0 10px;
+    			line-height: 90px;
+    			text-transform: uppercase;
+    			text-decoration: none; 
+    			width: max-content;
+    			
+    			.nav-menu-item-link{
+    				text-decoration: none; 
+    				padding: 8px 12px;
+    				border-radius: 3px;
+    				transition: 0.5s;
+    			}
+
+    			.nav-menu-item-link:hover{
+    				background-color:#572EE5;
+    				color:#ffffff;
+    			}
+
+    		}
+
+    	} 
+    		//Vizible contenido menu hamburguesa
+			.nav-menu_visible{
+				left:0;
+			}
+    }
+   
+ }

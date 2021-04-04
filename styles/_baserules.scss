@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; 
+}
+html{
+	height: 100%;
+}
+body{
+	min-height: 100%;
+}
+//--------------------------------------------
+//MEDIA QUERYS PARA TODO EL TEMPLATE GRID
+//--------------------------------------------
+
+.grid-container{
+	display: grid;
+	gap: 5px;
+	grid-template:
+	"header header 	header" 95px
+	"main 	main 	main"   auto		
+	"footer footer 	footer" 100px;
+}
+
+//Button Menu hamburguesa   
+.nav-toggle
+{
+	color:#572EE5;	
+	background: none;
+	border:none;
+	font-size: 30px;
+	padding: 0 20px;
+	line-height: 60px;
+	display: none;
+	cursor:pointer;
+}
+
+
+
+// //Modo tablet Breakpoint md-------------------------------
+@media (max-width: 768px) {
+
+	.grid-container{
+		//background-color: #333333;
+		display: grid;
+		gap: 2px;
+		grid-template:
+		"header header" 90px
+		"main   main"   auto		
+		"footer footer" 95px;
+	}
+
+
+	.nav-menu
+ 	{
+ 		flex-direction: column;
+ 		align-items: center;
+ 		margin-right: 20px;
+ 		background-color:#572EE5;
+ 		position: fixed;
+ 		left:0;
+ 		top:90px;
+ 		width: 100%;
+ 		padding: 20px 0;
+		height: calc(100% - 90px);
+		overflow-y:auto;
+		left:100%;
+		transition: left 0.5s;
+		.nav-menu-item
+    	{
+			color: #ffffff;
+			line-height: 90px;
+			.nav-menu-item-link
+			{
+				color:#ffffff;
+			}
+		} 
+    }
+
+	.nav-toggle
+	{
+		display:block;
+	}
+}
+
+// //Modo movil Breakpoint sm-------------------------------
+@media (max-width: 576px) {
+
+	.grid-container{
+		//background-color: #2eb7ed;
+		display: grid;
+		gap: 1px;
+		grid-template:
+		"header" 85px
+		"main"   auto		
+		"footer" 90px;
+	}
+
+	.nav-menu
+ 	{
+ 		flex-direction: column;
+ 		align-items: center;
+ 		margin-right: 20px;
+ 		background-color:#572EE5;
+ 		position: fixed;
+ 		left:0;
+ 		top:90px;
+ 		width: 100%;
+ 		padding: 20px 0;
+		height: calc(100% - 90px);
+		overflow-y:auto;
+		left:100%;
+		transition: left 0.5s;
+		.nav-menu-item
+    	{
+			color: #ffffff;
+			line-height: 90px;
+			.nav-menu-item-link
+			{
+				color:#ffffff;
+			}
+		} 
+    }
+
+	.nav-toggle
+	{
+		display:block;
+	}
+}
+
