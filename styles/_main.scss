@@ -1,9 +1,118 @@
 .main{
-    border: solid #000000 2px; 
+    border: solid red 2px; 
     grid-area:main;
-   // background-color:#91e374; 
     padding: 1px;
     margin: 1px;
    // grid-column: 1/5;
+   .buscador
+   {
+      border: solid rgb(255, 115, 0) 2px; 
+   }
+
+   .gifos
+   {
+      border: solid rgb(187, 255, 0) 2px; 
+      background-color: #F3F5F8;
+      display: flex;
+      justify-content:center;
+    	flex-direction: column;
+      .titulos
+      {
+        border: solid rgb(0, 217, 255) 2px; 
+        padding: 1px;
+        margin: 1px;
+        font-family: Montserrat-Bold;
+        font-weight: bold;
+        font-size: 25px;
+        color: #572EE5;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      .texto
+      {
+        border: solid rgb(255, 0, 157) 2px; 
+        margin-top: 10px;
+        font-family: Roboto-Regular;
+        font-size: 18px;
+        color: #000000;
+        text-align: center;
+      }
+
+   }
    
  }
+//contenedor de controles
+.contenedor-titulos-controles{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.contenedor-titulos-controles .indicadores button
+{
+  background: #ffff;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+
+.contenedor-titulos-controles .indicadores button:hover,
+.contenedor-titulos-controles .indicadores button.activo{
+  background: red;
+}
+
+
+ //Contenedor principla y flechaz
+.gif-recomendadas{
+  margin-bottom: 70px;
+}
+
+.gif-recomendadas .contenedor-principal{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gif-recomendadas .contenedor-principal .flecha-izquierda,
+.gif-recomendadas .contenedor-principal .flecha-derecha
+{
+  position: absolute;
+  border: none;
+  background: rgba(#572EE5 ,0.5);
+  font-size: 40px;
+  height: 50px;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: #F3F5F8;
+  cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all;
+}
+
+.gif-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.gif-recomendadas .contenedor-principal .flecha-derecha:hover
+{
+  background: rgba(#572EE5 ,0.9);
+}
+
+.gif-recomendadas .contenedor-principal .flecha-izquierda{
+  left: 0;
+}
+.gif-recomendadas .contenedor-principal .flecha-derecha{
+  right: 0;
+}
+
+//Css carrusel 
+.gif-recomendadas .contenedor-carrusel{
+  width: 100%;
+  padding: 20px 0;
+  // overflow: hidden;
+  scroll-behavior: smooth;
+}
+.gif-recomendadas .contenedor-carrusel .carrusel{
+  display: flex;
+}
