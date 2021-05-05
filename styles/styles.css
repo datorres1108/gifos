@@ -72,6 +72,15 @@ body {
   .nav-menu .nav-menu-item .nav-menu-item-link {
     color: #ffffff;
   }
+  .gifos {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .nav-toggle {
     display: block;
   }
@@ -128,7 +137,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 992px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -183,7 +192,7 @@ body {
 }
 
 .main {
-  border: solid red 2px;
+  border: solid #bbff00 5px;
   grid-area: main;
   padding: 1px;
   margin: 1px;
@@ -193,7 +202,7 @@ body {
   border: solid #ff7300 2px;
 }
 
-.main .gifos {
+.main .gifos-text {
   border: solid #bbff00 2px;
   background-color: #F3F5F8;
   display: -webkit-box;
@@ -208,8 +217,7 @@ body {
           flex-direction: column;
 }
 
-.main .gifos .titulos {
-  border: solid #00d9ff 2px;
+.main .gifos-text .titulos {
   padding: 1px;
   margin: 1px;
   font-family: Montserrat-Bold;
@@ -220,8 +228,7 @@ body {
   line-height: 30px;
 }
 
-.main .gifos .texto {
-  border: solid #ff009d 2px;
+.main .gifos-text .texto {
   margin-top: 10px;
   font-family: Roboto-Regular;
   font-size: 18px;
@@ -229,7 +236,7 @@ body {
   text-align: center;
 }
 
-.contenedor-titulos-controles {
+.main .contenedor-titulos-controles {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,7 +248,7 @@ body {
           align-items: end;
 }
 
-.contenedor-titulos-controles .indicadores button {
+.main .contenedor-titulos-controles .indicadores button {
   background: #ffff;
   height: 3px;
   width: 10px;
@@ -250,16 +257,18 @@ body {
   margin-right: 2px;
 }
 
-.contenedor-titulos-controles .indicadores button:hover,
-.contenedor-titulos-controles .indicadores button.activo {
+.main .contenedor-titulos-controles .indicadores button:hover,
+.main .contenedor-titulos-controles .indicadores button.activo {
   background: red;
 }
 
-.gif-recomendadas {
+.main .gif-recomendadas {
+  border: solid #ff009d 2px;
   margin-bottom: 70px;
+  background-color: #F3F5F8;
 }
 
-.gif-recomendadas .contenedor-principal {
+.main .gif-recomendadas .contenedor-principal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,8 +278,8 @@ body {
   position: relative;
 }
 
-.gif-recomendadas .contenedor-principal .flecha-izquierda,
-.gif-recomendadas .contenedor-principal .flecha-derecha {
+.main .gif-recomendadas .contenedor-principal .flecha-izquierda,
+.main .gif-recomendadas .contenedor-principal .flecha-derecha {
   position: absolute;
   border: none;
   background: rgba(87, 46, 229, 0.5);
@@ -286,29 +295,41 @@ body {
   transition: .2s ease all;
 }
 
-.gif-recomendadas .contenedor-principal .flecha-izquierda:hover,
-.gif-recomendadas .contenedor-principal .flecha-derecha:hover {
+.main .gif-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.main .gif-recomendadas .contenedor-principal .flecha-derecha:hover {
   background: rgba(87, 46, 229, 0.9);
 }
 
-.gif-recomendadas .contenedor-principal .flecha-izquierda {
+.main .gif-recomendadas .contenedor-principal .flecha-izquierda {
   left: 0;
 }
 
-.gif-recomendadas .contenedor-principal .flecha-derecha {
+.main .gif-recomendadas .contenedor-principal .flecha-derecha {
   right: 0;
 }
 
-.gif-recomendadas .contenedor-carrusel {
-  width: 100%;
-  padding: 20px 0;
+.main .gif-recomendadas .contenedor-carrusel {
+  width: 1300px;
+  padding: 20px 10px 10px 20px;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 
-.gif-recomendadas .contenedor-carrusel .carrusel {
+.main .gif-recomendadas .contenedor-carrusel .carrusel {
+  border: royalblue 1px solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.main .gif-recomendadas .contenedor-carrusel .carrusel .gifos {
+  padding: 2px 28px 5px 28px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .footer {
