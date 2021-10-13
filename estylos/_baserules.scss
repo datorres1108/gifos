@@ -1,0 +1,256 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; 
+}
+html{
+	height: 100%;
+}
+body{
+	min-height: 100%;
+}
+
+
+.contenedor{
+    border-top: 3px solid #572ee5;
+    overflow: hidden;
+}
+
+
+//Estilos reutilizables
+@mixin fuentes($fuentes, $color, $tamano, $peso) 
+{
+    font-family: $fuentes;
+    color: $color;
+    font-size: $tamano;
+    font-weight: $peso;
+}
+  
+@mixin opacidad($opacidad) 
+{
+    background: rgba(87, 46, 229, $opacidad);
+}
+
+//modo oscuro
+.Modo-Oscuro 
+{
+    .contenedor 
+    {
+        border-top: 5px solid #000;
+        background-color: #37383c;
+        header 
+        {
+            nav 
+            {
+                #logo_gifos {
+                    content: url('/assets/logo-mobile-modo-noct.svg');
+                }
+                .menu_hamburguesa {
+                    content: url('/assets/burger-modo-noct.svg');
+                }
+                .close-menu_hamburguesa
+                {
+                    content: url('/assets/close-modo-noct.svg');
+                }
+                .content-menu  
+                {
+                    background-color: #000;
+                    .content-menu-item  
+                    {
+                        color: #fff;
+                    }
+                    .plus-content-menu-item  
+                    {
+                        content: url('/assets/CTA-crear-gifo-modo-noc.svg');
+                        &:hover 
+                        {
+                            content: url('/assets/CTA-crear-gifo-hover-modo-noc.svg');
+                        }
+                        &:active 
+                        {
+                            content: url('/assets/CTA-crear-gifo-active-modo-noc.svg');
+                        }
+                    }
+                }
+            }
+           // background-color: #37383c;
+        }
+
+        //Cuerpo
+        // main 
+        // {
+        //     .gifos {
+        //     .message {
+        //         color: $second-color;
+        //     }
+        //     .search-gifo-section {
+        //         border: 1px solid $second-color;
+        //         background-color: #37383c;
+        //         #search-gifos {
+        //         background-color: #37383c;
+        //         color: $second-color;
+        //         }
+        //         .search-icon {
+        //         content: url('../assets/icon-search-modo-noct.svg');
+        //         &:hover {
+        //             cursor: pointer;
+        //         }
+        //         }
+        //         .close-search-icon {
+        //         content: url('../assets/close-modo-noct.svg');
+        //         }
+        //     }
+        //     .trending {
+        //         span {
+        //         color: $second-color;
+        //         }
+        //         .trending-search-term {
+        //         a {
+        //             color: $second-color;
+        //         }
+        //         }
+        //     }
+        //     #gifos-grid {
+        //         h2 {
+        //         color: $second-color;
+        //         }
+        //     }
+        //     #gifos-see-more {
+        //         .box-see-more {
+        //         .see-more {
+        //             border: 1px solid $second-color;
+        //             color: $second-color;
+        //         }
+        //         }
+        //     }
+        //     }
+        //     .favorite {
+        //     .favorite-container {
+        //         span {
+        //         color: $second-color;
+        //         }
+        //     }
+        //     .more-favorite {
+        //         span {
+        //         border: 1px solid $second-color;
+        //         color: $second-color;
+        //         }
+        //     }
+        //     }
+        //     .gifos-container {
+        //     .gifos-mine {
+        //         span {
+        //         color: $second-color;
+        //         }
+        //     }
+        //     .more-gifos {
+        //         span {
+        //         border-color: $second-color;
+        //         color: $second-color;
+        //         }
+        //     }
+        //     }
+        //     .giphy-container {
+        //     .recorder-container {
+        //         .camera-container {
+        //         .camera-image {
+        //             content: url('../assets/camara-modo-noc.svg');
+        //         }
+        //         }
+        //         .outer-recorder {
+        //         .inner-recorder {
+        //             .text-container {
+        //             .first-text {
+        //                 color: $second-color;
+        //             }
+        //             .second-text {
+        //                 color: $second-color;
+        //             }
+        //             .third-text {
+        //                 color: $second-color;
+        //             }
+        //             }
+        //         }
+        //         }
+        //         .recorder-steps {
+        //         .step {
+        //             border-color: $second-color;
+        //             .number-step {
+        //             color: $second-color;
+        //             }
+        //         }
+        //         .timer {
+        //             color: $second-color;
+        //         }
+        //         .repeat-recorder {
+        //             color: $second-color;
+        //         }
+        //         .movie {
+        //             content: url('../assets/pelicula-modo-noc.svg');
+        //         }
+        //         }
+        //     }
+        //     .recorder {
+        //         border-color: $second-color;
+        //         .text-recorder {
+        //         color: $second-color;
+        //         }
+        //     }
+        //     }
+        //     .community-gifos {
+        //     background-color: $eighth-color;
+        //     h2 {
+        //         color: $second-color;
+        //     }
+        //     .community-message {
+        //         span {
+        //         color: $second-color;
+        //         }
+        //     }
+        //     .gallery-container {
+        //         .move-left-container {
+        //         .move-left {
+        //             content: url('../assets/button-slider-left-md-noct.svg');
+        //             &:hover {
+        //             content: url('../assets/button-slider-left-hover.svg');
+        //             }
+        //         }
+        //         }
+        //         .move-right-container {
+        //         .move-right {
+        //             content: url('../assets/button-slider-right-md-noct.svg');
+        //             &:hover {
+        //             content: url('../assets/Button-Slider-right-hover.svg');
+        //             }
+        //         }
+        //         }
+        //     }
+        //     }
+        // }
+
+        //Pie
+        // footer 
+        // {
+        //     .social-media-section 
+        //     {
+        //         span {
+        //             color: $second-color;
+        //         }
+        //         #facebook {
+        //             content: url('../assets/icon_facebook_noc.svg');
+        //         }
+        //         #twitter {
+        //             content: url('../assets/icon_twitter_noc.svg');
+        //         }
+        //         #instagram {
+        //             content: url('../assets/icon_instagram_noc.svg');
+        //         }
+        //         .copyright {
+        //             color: $second-color;
+        //         }
+        //     }
+        // }
+    }
+}

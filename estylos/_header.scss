@@ -1,0 +1,200 @@
+header
+{ 
+    nav 
+    {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 100px;
+       
+        //Logo
+        #logo_gifos
+        {
+        content: url('/assets/logo-mobile.svg');
+        padding: 10px 50px 20px;
+        cursor: pointer;
+        }
+
+        //Img menu
+        .menu_hamburguesa 
+        {
+            cursor: pointer;
+            padding: 10px 50px 20px;
+            content: url('/assets/burger.svg');
+        }
+        .close-menu_hamburguesa 
+        {
+            content: url('/assets/close.svg');
+        }
+
+        //contenido menu
+        .content-menu 
+        {
+            @include opacidad(0.9);
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 90px;
+        }
+
+        .display-content-menu 
+        {
+            display: block;
+        }
+
+
+        ul 
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20.2px;
+
+            li 
+            {
+                cursor: pointer;
+                list-style: none;
+                padding-top: 17px;
+
+                .content-menu-item 
+                {
+                    width: 100vw;
+                    text-transform: capitalize;
+                    @include fuentes($font-montserrat, #fff, 20px, 800);
+                }
+
+                .linea-separador 
+                {
+                    margin: auto;
+                    width:70px;
+                    padding-top: 10px;
+                    border-bottom: 1px solid #fff;
+                }
+            }
+
+            .crear-menu-item 
+            {
+                display: none;
+            }
+        }
+    }
+}
+
+.content-menu-item
+  {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s; 
+ }
+
+ .content-menu-item:hover, a:focus
+ {
+     color: #5ed7c6;
+     margin: 3px auto;
+     padding: 1px;
+     opacity: 2;
+     font-size: 16px;
+     background-size: 100% 2px;
+     
+ }
+
+@media screen and (min-width: $mediapant) 
+{
+    header 
+    {
+        nav 
+        {
+            justify-content: space-between;
+            .menu_hamburguesa 
+            {
+                display: none;
+            }
+
+            #logo_gifos
+            {
+            padding-top: 3vw;
+            }
+            .content-menu 
+            {
+                display: block;
+                height: inherit;
+                background: transparent !important;
+                position: unset;
+                padding: 1vh 7.1vw 1vh 0;
+                ul
+                {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-top: unset;
+                    width: 50vw;
+                    li 
+                    {
+                        .content-menu-item
+                        {
+                            color: #572ee5;
+                            font-size: 13px;
+                            text-transform: uppercase;
+
+                            &:hover 
+                            {
+                                text-decoration: underline;
+                                text-decoration-color: #5ed7c6;
+                                text-decoration-thickness: 4px;
+                            }
+                            &:active 
+                            {
+                                color: #9cafc3;
+                                text-decoration: none;
+                            }
+                        }
+                        .linea-separador 
+                        {
+                            display: none;
+                        }
+                    }
+                    .crear-menu-item 
+                    {
+                        display: block;
+                    &:hover 
+                    {
+                        content: url('../assets/CTA-crear-gifo-hover.svg');
+                        
+                    }
+                    &:active 
+                    {
+                        content: url('../assets/CTA-crear-gifo-active.svg');
+                    }
+                    }
+                }
+            }
+        }
+    }
+}
+  
+@media screen and (min-width: $completapant) 
+{
+    header 
+    {
+        nav 
+        {
+            #logo_gifos
+            {
+                padding-top: 10px;
+                content: url('../assets/logo-desktop.svg');
+            }
+
+            .content-menu 
+            {
+                ul 
+                {
+                    width:60vw;
+                }
+            }
+        }
+    }
+}
